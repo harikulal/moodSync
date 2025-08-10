@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+    <h1>MoodSync</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/capture">Capture</a>
+    </nav>
+</header>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('capture_page') }}">Capture</a>
+    </nav>
+
+    <div class="container">
+        <h1><i class="fa fa-headphones"></i> MoodSync</h1>
+        <p>Feel the rhythm of your mood. MoodSync detects your emotions and plays music to match.</p>
+        <a href="{{ url_for('capture_page') }}" class="btn">Let's Get Started</a>
+    </div>
+    <footer>
+        &copy; 2025 MoodSync | Made with ❤️ and rhythm
+    </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capture Emotion | MoodSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid cyan;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+</head>
+<body>
+    <header>
+    <h1>MoodSync</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/capture">Capture</a>
+    </nav>
+</header>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('capture_page') }}">Capture</a>
+    </nav>
+
+    <div class="container">
+        <h1>Emotion Detection</h1>
+        <video id="video" width="400" autoplay style="transform: scaleX(-1);"></video>
+        <canvas id="canvas" width="400" height="300" style="display:none; margin-top: 20px;"></canvas>
+
+        <div id="countdown" style="font-size: 30px; margin-top: 10px;"></div>
+
+        <button class="btn" onclick="startCountdown()">Capture</button>
+        <button class="btn" onclick="retake()" id="retakeBtn" style="display: none;">Retake</button>
+        <div id="loader" style="display: none; margin-top: 20px;">
+    <div class="spinner"></div>
+    <p>Detecting Emotion...</p>
+</div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='capture.js') }}"></script>
+    <footer>
+        &copy; 2025 MoodSync | Made with ❤️ and rhythm
+    </footer>
+</body>
+</html>

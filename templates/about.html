@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | MoodSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+    <h1>MoodSync</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+</header>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('capture_page') }}">Capture</a>
+    </nav>
+
+    <div class="container">
+        <h1>About MoodSync</h1>
+        <p>
+            MoodSync is an AI-powered emotion-based music player.
+            It analyzes your facial expressions and plays music tailored to your emotions.
+            Emotions detected include: <b>Happy, Sad, Angry, Fear, Disgust, Surprise, Neutral</b>.
+        </p>
+    </div>
+    <footer>
+        &copy; 2025 MoodSync | Made with ❤️ and rhythm
+    </footer>
+</body>
+</html>

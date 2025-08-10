@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Detected Emotion: {{ emotion.capitalize() }}</h2>
+    <p>Select a song to play:</p>
+    <ul>
+        {% for song in songs %}
+        <li>
+            🎵 {{ song.split('/')[-1] }}
+            <form action="/play_selected" method="post">
+                <input type="hidden" name="emotion" value="{{ emotion }}">
+                <input type="hidden" name="selected_song" value="{{ song }}">
+                <button class="btn" type="submit">Play</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <img src="{{ url_for('static', filename=image) }}" width="480">
+</div>
+{% endblock %}
